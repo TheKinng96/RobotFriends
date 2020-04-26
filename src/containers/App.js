@@ -51,7 +51,7 @@ class App extends Component{
                 </Scroll>
             </div>
         );
-        // ! is 'is not' thus !robots = no robots
+        // ! is 'is not' thus !robots = no robots ?=if
     }
 }
 // to make we only scroll inside the content, we need to use children <Scroll>
