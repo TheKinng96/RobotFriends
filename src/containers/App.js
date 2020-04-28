@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import './App.css';
+import ErrorBoundry from '../components/ErrorBoundry';
 import Scroll from '../components/Scroll'
-import { robots } from "../robot"; //if the file only contain one thing, use {} to get it
+// import ErrorBoundry from '../ErrorBoundry';
+// import { robots } from "../robot"; //if the file only contain one thing, use {} to get it
 
 
 //in order to use state: the search field needs to be a class
@@ -47,7 +49,9 @@ class App extends Component{
                 <h1 className="f1" >RobotFriends</h1>
                 <SearchBox searchChange = {this.onSearchChange}/>
                 <Scroll>
-                    <CardList robots={filterRobots} />
+                    <ErrorBoundry>
+                        <CardList robots={filterRobots} />
+                    </ErrorBoundry>
                 </Scroll>
             </div>
         );
